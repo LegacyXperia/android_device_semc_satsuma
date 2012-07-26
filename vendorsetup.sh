@@ -14,4 +14,4 @@
 # limitations under the License.
 #
 
-add_lunch_combo satsuma-eng
+add_lunch_combo cm_satsuma-eng
