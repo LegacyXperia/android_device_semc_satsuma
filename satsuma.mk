@@ -9,6 +9,7 @@ $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
+    device/semc/satsuma/prebuilt/cyttsp_key.kl:system/usr/keylayout/cyttsp_key.kl \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
 
 PRODUCT_AAPT_CONFIG := normal mdpi mdpi
