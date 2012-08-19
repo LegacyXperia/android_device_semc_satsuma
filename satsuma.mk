@@ -9,7 +9,6 @@ $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
-    device/semc/satsuma/prebuilt/cyttsp_key.kl:system/usr/keylayout/cyttsp_key.kl \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
 
 PRODUCT_AAPT_CONFIG := normal mdpi mdpi
@@ -27,6 +26,18 @@ PRODUCT_COPY_FILES += \
     device/semc/msm7x30-common/prebuilt/logo_M.rle:root/logo.rle \
     device/semc/satsuma/prebuilt/bootrec-device:root/sbin/bootrec-device \
     device/semc/satsuma/recovery.fstab:root/recovery.fstab
+
+# Device specific configs
+PRODUCT_COPY_FILES += \
+    device/semc/satsuma/config/cyttsp_key.kl:system/usr/keylayout/cyttsp_key.kl \
+    device/semc/satsuma/config/cyttsp-spi.idc:system/usr/idc/cyttsp-spi.idc \
+    device/semc/satsuma/config/atdaemon.kl:system/usr/keylayout/atdaemon.kl \
+    device/semc/satsuma/config/msm_pmic_pwr_key.kl:system/usr/keylayout/msm_pmic_pwr_key.kl \
+    device/semc/satsuma/config/pm8058-keypad.kl:system/usr/keylayout/pm8058-keypad.kl \
+    device/semc/satsuma/config/simple_remote.kl:system/usr/keylayout/simple_remote.kl \
+    device/semc/satsuma/config/init.qcom.bt.sh:system/etc/init.qcom.bt.sh \
+    device/semc/satsuma/config/sensors.conf:system/etc/sensors.conf \
+    device/semc/satsuma/config/tiwlan.ini:system/etc/tiwlan.ini
 
 $(call inherit-product, device/semc/msm7x30-common/prebuilt/resources-mdpi.mk)
 
