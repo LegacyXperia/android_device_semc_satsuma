@@ -21,10 +21,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/semc/satsuma/recovery/bootrec-device:recovery/bootrec-device
 
-# Bluetooth config
-PRODUCT_COPY_FILES += \
-    device/semc/satsuma/bluetooth/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
-
 # Device specific configs
 PRODUCT_COPY_FILES += \
     device/semc/satsuma/config/cyttsp_key.kl:system/usr/keylayout/cyttsp_key.kl \
