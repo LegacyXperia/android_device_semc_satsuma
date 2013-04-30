@@ -10,6 +10,10 @@ $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 PRODUCT_AAPT_CONFIG := normal mdpi mdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 
+# Barometer
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.sensor.barometer.xml:system/etc/permissions/android.hardware.sensor.barometer.xml
+
 # Init files
 PRODUCT_COPY_FILES += \
     device/semc/satsuma/prebuilt/init.semc.usb.rc:root/init.semc.usb.rc \
