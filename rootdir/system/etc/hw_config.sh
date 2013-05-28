@@ -35,14 +35,6 @@ echo $val_freq > $dev/freq      # Burst frequency. Valid range is 0 - 3.
 echo $val_threshold > $dev/threshold # sensor threshold. Valid range is 0 - 15 (0.12V - 0.87V)
 echo $val_filter > $dev/filter  # RFilter. Valid range is 0 - 3.
 
-# LMU AS3676 Configuration
-dev=/sys/devices/i2c-0/0-0040/leds
-# touch-button-backlight
-echo 8000 > $dev/button-backlight/max_current_uA
-echo 6450 > $dev/red/max_current_uA
-echo 7950 > $dev/green/max_current_uA
-echo 4500 > $dev/blue/max_current_uA
-
 dev=/sys/devices/platform/spi_qsd.0/spi0.0
 app_id=`cat  $dev/appid`
 case "$app_id" in
