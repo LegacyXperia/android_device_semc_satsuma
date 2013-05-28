@@ -11,24 +11,12 @@ echo 16  > $dev/btn_trig_hyst_time   # Button Hysteresis Time(Cycle) default = 1
 echo 500 > $dev/btn_trig_level  # default = 500
 
 # Proximity sensor configuration
-dev=/sys/bus/i2c/devices/0-0054
-hwid=`cat /sys/class/hwid/hwid`
-case $hwid in
- 0x0a)
-  val_cycle=2
-  val_nburst=7
-  val_freq=3
-  val_threshold=15
-  val_filter=0
-  ;;
- *)
-  val_cycle=2
-  val_nburst=8
-  val_freq=2
-  val_threshold=15
-  val_filter=0
-  ;;
-esac
+dev=/sys/bus/i2c/devices/0-0054/
+val_cycle=0
+val_nburst=1
+val_freq=0
+val_threshold=4
+val_filter=0
 
 nv_param_loader 60240 prox_cal
 val_calibrated=$?
@@ -49,8 +37,23 @@ echo $val_filter > $dev/filter  # RFilter. Valid range is 0 - 3.
 
 # LMU AS3676 Configuration
 dev=/sys/devices/i2c-0/0-0040/leds
-echo 500 > $dev/button-backlight/max_current
-echo 5000 > $dev/keyboard-backlight/max_current
+# touch-button-backlight
+echo 8000 > $dev/button-backlight/max_current_uA
+echo 6450 > $dev/red/max_current_uA
+echo 7950 > $dev/green/max_current_uA
+echo 4500 > $dev/blue/max_current_uA
+
+dev=/sys/devices/platform/spi_qsd.0/spi0.0
+app_id=`cat  $dev/appid`
+case "$app_id" in
+	"0x0207")
+		fw=touch_satsuma_hitachi.hex
+        ;;
+	*)
+		fw=touch_satsuma_hitachi.hex
+        ;;
+esac
+cyttsp_fwloader -dev $dev -fw /system/etc/firmware/$fw
 
 # TI BQ275xx firmware loader
 bq275xx_fwloader
