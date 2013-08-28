@@ -15,6 +15,8 @@
 -include device/semc/mogami-common/BoardConfigCommon.mk
 -include vendor/semc/satsuma/BoardConfigVendor.mk
 
+TARGET_SPECIFIC_HEADER_PATH += device/semc/satsuma/include
+
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/semc/satsuma/bluedroid
 
