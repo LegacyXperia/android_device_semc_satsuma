@@ -30,3 +30,6 @@ SOMC_CFG_SENSORS_PRESSURE_BMP180 := yes
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := ST17a,ST17i,satsuma
+
+# CM Hardware tunables
+BOARD_HARDWARE_CLASS := device/semc/satsuma/cmhw
