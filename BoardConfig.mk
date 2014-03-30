@@ -21,7 +21,7 @@ TARGET_SPECIFIC_HEADER_PATH += device/semc/satsuma/include
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/semc/satsuma/bluedroid
 
 # Kernel
-TARGET_KERNEL_CONFIG := nAa_satsuma_defconfig
+TARGET_KERNEL_CONFIG := lx_satsuma_defconfig
 
 # Sensors
 SOMC_CFG_SENSORS_ACCEL_BMA250_INPUT := yes
